@@ -55,7 +55,9 @@ AC_ARG_WITH([protoc],
 AC_SUBST([PROTOC])
 
 AC_CONFIG_FILES([Makefile
-                 src/Makefile])
+                 proto/Makefile
+                 src/Makefile
+                 python/Makefile])
 
 AM_INIT_AUTOMAKE([ml-stress], [0.1])
 
