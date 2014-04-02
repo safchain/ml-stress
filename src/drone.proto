@@ -1,0 +1,39 @@
+//
+// drone.c
+//
+//  Created on: 20 mars 2014
+//      Author: Sylvain Afchain <safchain@gmail.com>
+//
+
+package Drone;
+
+message JobRequest {
+    required uint32 ipv4 = 1;                   // ipv4 address of the drone
+    required uint32 port = 2;                   // port of the drone
+    required uint32 block_size = 3;             // size of each message sent and received to/from the server
+    required uint32 sessions = 4;               // number of parallel connections
+    required uint32 seconds = 5;                // run duration
+    required uint32 interval = 6;               // each time a report will be generated
+    required float rampup_interval = 7;         // each time the number of sessions will be increased
+    required uint32 rampup_sessions = 8;        // number of new sessions that will be created each interval
+    required float messages_interval = 9;       // interval between to messages sending
+    required float messages_percent = 10;       // percent of the opened sessions which will send messages
+    required uint32 timeout = 11;               // timeout of each sessions
+}
+
+message JobIntervalResult {
+    required uint64 total_sessions = 1;
+    required uint64 total_bytes_read = 2;
+    required uint64 total_messages_read = 3;
+}
+
+message JobErrorMessage {
+    required string message = 1;
+}
+
+message JobResult {
+    required uint64 total_sessions = 1;
+    required uint64 total_bytes_read = 2;
+    required uint64 total_messages_read = 3;
+    repeated JobIntervalResult intervalResults = 4;
+}

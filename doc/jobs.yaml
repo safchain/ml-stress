@@ -1,0 +1,15 @@
+-
+  id: 1
+  seconds: 600
+  interval: 1
+  sessions: 30000
+  block_size: 1
+  rampup_sessions: 10
+  rampup_interval: 0.1
+  messages_interval: 2
+  messages_percent: 1
+  timeout: 60
+  connections:
+    -
+      from: localhost:8888
+      to: localhost:9999
