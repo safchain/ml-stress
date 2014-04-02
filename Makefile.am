@@ -1,2 +1,2 @@
 SUBDIRS = src
-EXTRA_DIST = doc
+EXTRA_DIST = doc bin
