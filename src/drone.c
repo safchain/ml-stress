@@ -622,6 +622,8 @@ int main(int argc, char **argv) {
     }
     evconnlistener_set_error_cb(listener, drone_srv_accept_error_cb);
 
+    printf("Drone started, waiting for job...\n");
+
     event_base_dispatch(base);
     event_base_free(base);
 

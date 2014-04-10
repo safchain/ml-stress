@@ -131,6 +131,8 @@ int main(int argc, char **argv) {
     }
     evconnlistener_set_error_cb(listener, srv_accept_error_cb);
 
+    printf("Server started, waiting for connection...\n");
+
     if (workers > 2) {
         for (i = 0; i != workers; i++) {
             if (fork() == 0) {
